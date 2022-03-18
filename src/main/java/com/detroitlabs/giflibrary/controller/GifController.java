@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDate;
+import java.util.Locale;
 
 @Controller
 public class GifController {
@@ -29,24 +30,26 @@ public class GifController {
 
     public String gifDetails(@PathVariable String name, ModelMap modelMap) {
         Gif gif = gifRepository.findByName(name);
+        String concatName = gif.getUsername().toLowerCase().replace(" ", "");
         modelMap.put("gif", gif);
+        modelMap.put("concatName", concatName);
         return "gif-details";
     }
 
-//
+
 //    @RequestMapping("/gif/{dateUploaded}")
 //
-//    public String gifDetails(@PathVariable LocalDate dateUploaded, ModelMap modelMap) {
-//        Gif gif = gifRepository.findByDateUploaded(dateUploaded);
-//        modelMap.put("gif", gif);
+//    public String gifDateUploaded(@PathVariable LocalDate dateUploaded, ModelMap modelMap) {
+//        Gif gifDateUploaded = gifRepository.findByDateUploaded(dateUploaded);
+//        modelMap.put("gifDateUploaded", gifDateUploaded);
 //        return "gif-details";
 //    }
 //
 //    @RequestMapping("/gif/{username}")
 //
-//    public String gifDetails2(@PathVariable String username, ModelMap modelMap) {
-//        Gif gif = gifRepository.findByUsername(username);
-//        modelMap.put("gif", gif);
+//    public String gifUsername(@PathVariable String username, ModelMap modelMap) {
+//        Gif gifUsername = gifRepository.findByUsername(username);
+//        modelMap.put("gifUsername", gifUsername);
 //        return "gif-details";
 //    }
     //we use ModelMap's put() method to add our new instance of GIF to the map, and give it a key of "gif"

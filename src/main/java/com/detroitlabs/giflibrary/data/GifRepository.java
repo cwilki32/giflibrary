@@ -38,10 +38,10 @@ public class GifRepository {
         return gifsByCategory;
 
     }
-}
+
 //    public Gif findByUsername(String username) {
-//        for(Gif gif:ALL_GIFS) {
-//            if(gif.getUsername().equals(username)) {
+//        for (Gif gif : ALL_GIFS) {
+//            if (gif.getUsername().equals(username)) {
 //                return gif;
 //            }
 //        }
@@ -49,11 +49,12 @@ public class GifRepository {
 //    }
 //
 //    public Gif findByDateUploaded(LocalDate dateUploaded) {
-//        for(Gif gif:ALL_GIFS) {
-//            if(gif.getDateUploaded().equals(dateUploaded)) {
+//        for (Gif gif : ALL_GIFS) {
+//            if (gif.getDateUploaded().equals(dateUploaded)) {
 //                return gif;
 //            }
 //        }
 //        return null;
 //    }
+}
 
