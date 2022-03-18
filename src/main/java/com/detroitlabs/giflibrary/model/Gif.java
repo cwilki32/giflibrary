@@ -7,6 +7,7 @@ public class Gif {
     private LocalDate dateUploaded;
     private String username;
     private boolean favorite;
+    private String keyword;
 
     private int id;
 
@@ -60,5 +61,12 @@ public class Gif {
         this.id=id;
     }
 
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
 }
 

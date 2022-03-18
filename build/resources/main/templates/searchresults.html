@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Gif Library | Search Results</title>
+</head>
+<body>
+<div class="gifs container">
+    <div th:text="${gifQuery.name}" class="chip"></div>
+    <!--    references name from the model map-->
+    <div class="row">
+        <!-- for each in the gifQuery list -->
+        <div th:each="gif: ${gifQuery}" class="col s12 l4">
+            <a th:href="'/gif/' + ${gif.name}" th:text="${gif.name}"></a>
+            <img th:src="@{'/gifs/' + ${gif.name} + '.gif'}" alt="Gifs matching search"/>
+            <a href="#" th:class="(${gif.favorite} ? 'un' : '') + 'mark favorite'"></a>
+        </div>
+
+</body>
+</html>
