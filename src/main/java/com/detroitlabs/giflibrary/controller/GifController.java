@@ -26,7 +26,7 @@ public class GifController {
         return "home";
     }
 
-        //attempting to add favorites page
+    //attempting to add favorites page
     @RequestMapping("/favorites")
     public String displayFavorites() {
         return "favorites";
@@ -44,8 +44,8 @@ public class GifController {
 
     //exercise 32.5 bullet 2 and 3 -- @RequestParam that intercepts the URI specified by search form's action attribute
 
-    @RequestMapping("/?q={keyword}#")
-    public String gifQuery(@RequestParam("keyword") @PathVariable String keyword, ModelMap modelMap) {
+    @RequestMapping("/search")
+    public String gifQuery(@RequestParam String keyword, ModelMap modelMap) {
         if (keyword != null) {
             List<Gif> gifQuery = gifRepository.findByQuery(keyword);//searches all gifs to return by keyword
             modelMap.put("gifQuery", gifQuery);
@@ -55,4 +55,5 @@ public class GifController {
         }
     }
 }
+
 
