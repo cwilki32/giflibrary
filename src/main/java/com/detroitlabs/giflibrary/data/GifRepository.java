@@ -51,6 +51,15 @@ public class GifRepository {
             }
         } return gifsByQuery;
     }
+
+    public List<Gif> showFavorites () {//method to return "favorite" gifs
+        List<Gif> favoriteGifs = new ArrayList<>();
+        for (Gif gif : ALL_GIFS) {
+            if(gif.isFavorite() == true) {
+                favoriteGifs.add(gif);
+            }
+        } return favoriteGifs;
+    }
 }
 
 

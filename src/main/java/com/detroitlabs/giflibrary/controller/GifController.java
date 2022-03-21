@@ -26,11 +26,13 @@ public class GifController {
         return "home";
     }
 
-//    //attempting to add favorites page
-//    @RequestMapping("/favorites")
-//    public String displayFavorites() {
-//        return "favorites";
-//    }
+    //attempting to add favorites page
+    @RequestMapping("/favorites")
+    public String displayFavorites(ModelMap modelMap) {
+        List<Gif> favoriteGifs = gifRepository.showFavorites();
+        modelMap.put("favoriteGifs", favoriteGifs);
+        return "favorites";
+    }
 
     @RequestMapping("/gif/{name}")
     public String gifDetails(@PathVariable String name, ModelMap modelMap) {
